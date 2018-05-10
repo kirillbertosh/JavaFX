@@ -4,10 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import sample.Main;
+import sample.controllers.invoices.InvoicesRootLayoutController;
+import sample.controllers.reports.ReportsRootLayoutController;
 
 public class MainMenuLayoutController {
 
     private BorderPane mainMenuLayout;
+    private InvoicesRootLayoutController invoicesRootLayoutController;
 
 
     public MainMenuLayoutController() {
@@ -30,6 +33,8 @@ public class MainMenuLayoutController {
         BorderPane invoicesLayout = (BorderPane) loader.load();
 
         mainMenuLayout.setCenter(invoicesLayout);
+        invoicesRootLayoutController = loader.getController();
+        invoicesRootLayoutController.setInvoicesLayout(invoicesLayout);
     }
 
     @FXML
@@ -39,6 +44,7 @@ public class MainMenuLayoutController {
         BorderPane reportsLayout = (BorderPane) loader.load();
 
         mainMenuLayout.setCenter(reportsLayout);
+        ReportsRootLayoutController reportsRootLayoutController = loader.getController();
     }
 
     @FXML

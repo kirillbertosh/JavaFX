@@ -25,7 +25,6 @@ public class GUIInitializer {
     public void initialize() throws Exception {
         initRootLayout();
         initMainMenuLayout();
-
     }
 
     public void initLoginLayout() throws Exception {
@@ -54,27 +53,5 @@ public class GUIInitializer {
 
         mainMenuLayoutController = loader.getController();
         mainMenuLayoutController.setMainMenuLayout(mainMenuLayout);
-    }
-
-    public void showInvoiceLayout() throws Exception {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("views/invoices/invoicesRootLayout.fxml"));
-        invoicesLayout = (BorderPane) loader.load();
-
-        mainMenuLayout.setCenter(invoicesLayout);
-        invoicesRootLayoutController = loader.getController();
-        invoicesRootLayoutController.setInvoicesLayout(invoicesLayout);
-    }
-
-    public void showJournalLayout() throws Exception {
-
-    }
-
-    public void showReportLayout() throws Exception {
-
-    }
-
-    public void showDirectoryLayout() throws Exception {
-
     }
 }

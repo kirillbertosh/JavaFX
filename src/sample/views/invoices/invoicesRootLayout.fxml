@@ -18,9 +18,9 @@
    <top>
       <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Приёмные накладные" />
+            <Button mnemonicParsing="false" onAction="#showComingInvoices" text="Приёмные накладные" />
             <Button mnemonicParsing="false" onAction="#showSalesInvoices" text="Расходные накладные" />
-            <Button mnemonicParsing="false" text="Акты списаний" />
+            <Button mnemonicParsing="false" onAction="#showCancellationActs" text="Акты списаний" />
          </children>
       </HBox>
    </top>
