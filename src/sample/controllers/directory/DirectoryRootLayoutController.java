@@ -1,0 +1,61 @@
+package sample.controllers.directory;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import sample.Main;
+
+public class DirectoryRootLayoutController {
+
+    private BorderPane directoryLayout;
+
+    public DirectoryRootLayoutController() {
+
+    }
+
+    @FXML
+    public void initialize() {
+
+    }
+
+    public void setDirectoryLayout(BorderPane directoryLayout) {
+        this.directoryLayout = directoryLayout;
+    }
+
+    @FXML
+    public void showCounterpartiesView() throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("views/directory/counterpartiesView.fxml"));
+        AnchorPane counterpartiesLayout = (AnchorPane) loader.load();
+
+        directoryLayout.setCenter(counterpartiesLayout);
+    }
+
+    @FXML
+    public void showMeasuresView() throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("views/directory/measuresView.fxml"));
+        AnchorPane measureLayout = (AnchorPane) loader.load();
+
+        directoryLayout.setCenter(measureLayout);
+    }
+
+    @FXML
+    public void showProductGroupView() throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("views/directory/productGroupView.fxml"));
+        AnchorPane productGroupLayout = (AnchorPane) loader.load();
+
+        directoryLayout.setCenter(productGroupLayout);
+    }
+
+    @FXML
+    public void showStorageView() throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("views/directory/storageView.fxml"));
+        AnchorPane storageLayout = (AnchorPane) loader.load();
+
+        directoryLayout.setCenter(storageLayout);
+    }
+}

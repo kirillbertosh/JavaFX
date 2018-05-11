@@ -20,9 +20,9 @@
    <top>
       <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Остаток ТМЦ" />
-            <Button mnemonicParsing="false" text="Списание ТМЦ" />
-            <Button mnemonicParsing="false" text="Динамика расхода ТМЦ" />
+            <Button mnemonicParsing="false" onAction="#showProductBalanceReport" text="Остаток ТМЦ" />
+            <Button mnemonicParsing="false" onAction="#showProductDepartureReport" text="Списание ТМЦ" />
+            <Button mnemonicParsing="false" onAction="#showExpenditureDynamicReport" text="Динамика расхода ТМЦ" />
             <Button mnemonicParsing="false" text="Товарный отчёт">
             </Button>
          </children>
