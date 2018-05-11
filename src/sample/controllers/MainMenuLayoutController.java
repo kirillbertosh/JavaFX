@@ -4,13 +4,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import sample.Main;
+import sample.controllers.directory.DirectoryRootLayoutController;
 import sample.controllers.invoices.InvoicesRootLayoutController;
+import sample.controllers.journals.JournalsRootLayoutController;
 import sample.controllers.reports.ReportsRootLayoutController;
 
 public class MainMenuLayoutController {
 
     private BorderPane mainMenuLayout;
-    private InvoicesRootLayoutController invoicesRootLayoutController;
 
 
     public MainMenuLayoutController() {
@@ -33,7 +34,7 @@ public class MainMenuLayoutController {
         BorderPane invoicesLayout = (BorderPane) loader.load();
 
         mainMenuLayout.setCenter(invoicesLayout);
-        invoicesRootLayoutController = loader.getController();
+        InvoicesRootLayoutController invoicesRootLayoutController = loader.getController();
         invoicesRootLayoutController.setInvoicesLayout(invoicesLayout);
     }
 
@@ -51,17 +52,21 @@ public class MainMenuLayoutController {
     public void showJournalsMenu() throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("views/journals/journalsRootLayout.fxml"));
-        BorderPane reportsLayout = (BorderPane) loader.load();
+        BorderPane journalsLayout = (BorderPane) loader.load();
 
-        mainMenuLayout.setCenter(reportsLayout);
+        mainMenuLayout.setCenter(journalsLayout);
+        JournalsRootLayoutController journalsRootLayoutController = loader.getController();
+        journalsRootLayoutController.setJournalsLayout(journalsLayout);
     }
 
     @FXML
     public void showDirectoryMenu() throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("views/directory/directoryRootLayout.fxml"));
-        BorderPane reportsLayout = (BorderPane) loader.load();
+        BorderPane directoryLayout = (BorderPane) loader.load();
 
-        mainMenuLayout.setCenter(reportsLayout);
+        mainMenuLayout.setCenter(directoryLayout);
+        DirectoryRootLayoutController directoryRootLayoutController = loader.getController();
+        directoryRootLayoutController.setDirectoryLayout(directoryLayout);
     }
 }

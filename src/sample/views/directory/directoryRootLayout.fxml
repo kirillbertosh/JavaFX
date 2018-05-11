@@ -18,10 +18,10 @@
 <top>
     <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
         <children>
-            <Button mnemonicParsing="false" text="Группы ТМЦ" />
-            <Button mnemonicParsing="false" text="Контрагенты" />
-            <Button mnemonicParsing="false" text="Единицы измерения" />
-            <Button mnemonicParsing="false" text="Места хранения">
+            <Button mnemonicParsing="false" onAction="#showProductGroupView" text="Группы ТМЦ" />
+            <Button mnemonicParsing="false" onAction="#showCounterpartiesView" text="Контрагенты" />
+            <Button mnemonicParsing="false" onAction="#showMeasuresView" text="Единицы измерения" />
+            <Button mnemonicParsing="false" onAction="#showStorageView" text="Места хранения">
             </Button>
         </children>
     </HBox>
