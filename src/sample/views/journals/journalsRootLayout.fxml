@@ -20,7 +20,7 @@
         <children>
             <Button mnemonicParsing="false" onAction="#showArrivalJournals" text="Журнал прихода" />
             <Button mnemonicParsing="false" onAction="#showConsumptionJournals" text="Журнал расхода" />
-            <Button mnemonicParsing="false" text="Общий" />
+            <Button mnemonicParsing="false" onAction="#showCommonJournal" text="Общий" />
         </children>
     </HBox>
 </top>
