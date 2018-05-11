@@ -18,8 +18,8 @@
 <top>
     <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
         <children>
-            <Button mnemonicParsing="false" text="Журнал прихода" />
-            <Button mnemonicParsing="false" text="Журнал расхода" />
+            <Button mnemonicParsing="false" onAction="#showArrivalJournals" text="Журнал прихода" />
+            <Button mnemonicParsing="false" onAction="#showConsumptionJournals" text="Журнал расхода" />
             <Button mnemonicParsing="false" text="Общий" />
         </children>
     </HBox>
