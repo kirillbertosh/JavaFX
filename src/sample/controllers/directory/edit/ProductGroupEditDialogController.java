@@ -30,6 +30,9 @@ public class ProductGroupEditDialogController {
 
     public void setProductGroup(ProductGroup productGroup) {
         this.productGroup = productGroup;
+        nameField.setText(productGroup.getName());
+        numberField.setText(productGroup.getNumber());
+        parentGroupField.setText(productGroup.getParentGroup());
     }
 
     @FXML

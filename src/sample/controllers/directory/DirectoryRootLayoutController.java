@@ -36,6 +36,8 @@ public class DirectoryRootLayoutController {
         AnchorPane counterpartiesLayout = (AnchorPane) loader.load();
 
         directoryLayout.setCenter(counterpartiesLayout);
+        CounterpartiesViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     @FXML
@@ -45,6 +47,8 @@ public class DirectoryRootLayoutController {
         AnchorPane measureLayout = (AnchorPane) loader.load();
 
         directoryLayout.setCenter(measureLayout);
+        MeasuresViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     @FXML
