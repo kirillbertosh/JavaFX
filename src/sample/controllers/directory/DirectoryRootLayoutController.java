@@ -54,6 +54,8 @@ public class DirectoryRootLayoutController {
         AnchorPane productGroupLayout = (AnchorPane) loader.load();
 
         directoryLayout.setCenter(productGroupLayout);
+        ProductGroupViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     @FXML
