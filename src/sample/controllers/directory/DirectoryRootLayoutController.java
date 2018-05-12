@@ -32,11 +32,11 @@ public class DirectoryRootLayoutController {
     @FXML
     public void showCounterpartiesView() throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("views/directory/counterpartiesView.fxml"));
+        loader.setLocation(Main.class.getResource("views/directory/contractorsView.fxml"));
         AnchorPane counterpartiesLayout = (AnchorPane) loader.load();
 
         directoryLayout.setCenter(counterpartiesLayout);
-        CounterpartiesViewController controller = loader.getController();
+        ContractorsViewController controller = loader.getController();
         controller.setPrimaryStage(primaryStage);
     }
 

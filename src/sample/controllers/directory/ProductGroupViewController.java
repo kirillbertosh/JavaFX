@@ -77,8 +77,8 @@ public class ProductGroupViewController {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(primaryStage);
             alert.setTitle("Ничего не выбранно");
-            alert.setHeaderText("Не выбран склад");
-            alert.setContentText("Пожалуйста, выберите склад из таблицы");
+            alert.setHeaderText("Не выбрана группа ТМЦ");
+            alert.setContentText("Пожалуйста, выберите группу ТМЦ из таблицы");
 
             alert.showAndWait();
         }
@@ -127,8 +127,8 @@ public class ProductGroupViewController {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(primaryStage);
             alert.setTitle("Ничего не выбранно");
-            alert.setHeaderText("Не выбран склад");
-            alert.setContentText("Пожалуйста, выберите склад из таблицы");
+            alert.setHeaderText("Не выбрана группа ТМЦ");
+            alert.setContentText("Пожалуйста, выберите группу ТМЦ из таблицы");
 
             alert.showAndWait();
         }
