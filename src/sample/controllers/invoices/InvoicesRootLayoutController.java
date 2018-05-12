@@ -4,14 +4,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import sample.Main;
 
 public class InvoicesRootLayoutController {
 
     private BorderPane invoicesLayout;
+    private Stage primaryStage;
 
     public InvoicesRootLayoutController() {
 
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 
     @FXML
@@ -25,6 +31,8 @@ public class InvoicesRootLayoutController {
         AnchorPane salesInvoices = (AnchorPane) loader.load();
 
         invoicesLayout.setCenter(salesInvoices);
+        SalesInvoiceViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     @FXML
@@ -34,6 +42,8 @@ public class InvoicesRootLayoutController {
         AnchorPane salesInvoices = (AnchorPane) loader.load();
 
         invoicesLayout.setCenter(salesInvoices);
+        CancellationActViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     @FXML
@@ -43,6 +53,8 @@ public class InvoicesRootLayoutController {
         AnchorPane salesInvoices = (AnchorPane) loader.load();
 
         invoicesLayout.setCenter(salesInvoices);
+        ComingInvoiceViewController controller = loader.getController();
+        controller.setPrimaryStage(primaryStage);
     }
 
     public void setInvoicesLayout(BorderPane invoicesLayout) {

@@ -6,17 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.invoices.ComingInvoiceViewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="178.0" layoutY="86.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutX="-12.0" layoutY="81.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="comingInvoiceTable" layoutX="-12.0" layoutY="81.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                       <columns>
-                          <TableColumn prefWidth="121.0" text="Номер" />
-                          <TableColumn prefWidth="113.0" text="Дата" />
+                          <TableColumn fx:id="numberColumn" prefWidth="121.0" text="Номер" />
+                          <TableColumn fx:id="dateColumn" prefWidth="113.0" text="Дата" />
                       </columns>
                   </TableView>
                </children>
@@ -41,6 +40,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Номер" />
@@ -50,30 +50,32 @@
                         <Label text="Единица измерения" GridPane.rowIndex="4" />
                         <Label GridPane.rowIndex="5" />
                         <Label text="Цена без скидки" GridPane.rowIndex="6" />
-                        <Label text="НДС" GridPane.rowIndex="7" />
-                        <Label text="Сумма НДС" GridPane.rowIndex="8" />
-                        <Label text="Итого" GridPane.rowIndex="9" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label text="НДС" GridPane.rowIndex="8" />
+                        <Label text="Сумма НДС" GridPane.rowIndex="9" />
+                        <Label text="Итого" GridPane.rowIndex="10" />
+                        <Label fx:id="numberLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="contractorLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="measureLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="amountLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="withoutDiscountPriceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="addedValueTaxLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label fx:id="addedValueTaxSumLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label fx:id="totalPriceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <Label text="Дата" GridPane.rowIndex="1" />
                         <Label text="Количество" GridPane.rowIndex="5" />
-                        <Label text="Номер склада" GridPane.rowIndex="10" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label text="Номер склада" GridPane.rowIndex="11" />
+                        <Label fx:id="storageNumberLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Label text="Скидка" GridPane.rowIndex="7" />
+                        <Label fx:id="discountLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
-                  <HBox layoutX="149.0" layoutY="360.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="45.0">
+                   <HBox layoutX="174.0" layoutY="348.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="75.0">
                      <children>
-                        <Button layoutX="149.0" layoutY="360.0" mnemonicParsing="false" text="Добавить" />
-                        <Button layoutX="209.0" layoutY="360.0" mnemonicParsing="false" text="Изменить" />
-                        <Button layoutX="273.0" layoutY="360.0" mnemonicParsing="false" text="Удалить" />
+                        <Button layoutX="149.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleNewComingInvoice" text="Добавить" />
+                        <Button layoutX="209.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleEditComingInvoice" text="Изменить" />
+                        <Button layoutX="273.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteComingInvoice" text="Удалить" />
                      </children>
                   </HBox>
                </children>

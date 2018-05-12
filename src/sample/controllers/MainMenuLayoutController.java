@@ -41,6 +41,7 @@ public class MainMenuLayoutController {
         mainMenuLayout.setCenter(invoicesLayout);
         InvoicesRootLayoutController invoicesRootLayoutController = loader.getController();
         invoicesRootLayoutController.setInvoicesLayout(invoicesLayout);
+        invoicesRootLayoutController.setPrimaryStage(primaryStage);
     }
 
     @FXML
