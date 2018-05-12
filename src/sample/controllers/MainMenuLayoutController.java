@@ -3,6 +3,7 @@ package sample.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import sample.Main;
 import sample.controllers.directory.DirectoryRootLayoutController;
 import sample.controllers.invoices.InvoicesRootLayoutController;
@@ -12,10 +13,14 @@ import sample.controllers.reports.ReportsRootLayoutController;
 public class MainMenuLayoutController {
 
     private BorderPane mainMenuLayout;
-
+    private Stage primaryStage;
 
     public MainMenuLayoutController() {
 
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 
     public void setMainMenuLayout(BorderPane mainMenuLayout) {
@@ -69,5 +74,6 @@ public class MainMenuLayoutController {
         mainMenuLayout.setCenter(directoryLayout);
         DirectoryRootLayoutController directoryRootLayoutController = loader.getController();
         directoryRootLayoutController.setDirectoryLayout(directoryLayout);
+        directoryRootLayoutController.setPrimaryStage(primaryStage);
     }
 }

@@ -6,17 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.directory.StorageViewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="158.0" layoutY="74.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="storageTable" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="121.0" text="Номер" />
-                      <TableColumn prefWidth="110.0" text="Название" />
+                      <TableColumn fx:id="numberColumn" prefWidth="121.0" text="Номер" />
+                      <TableColumn fx:id="nameColumn" prefWidth="110.0" text="Название" />
                     </columns>
                   </TableView>
                </children>
@@ -37,17 +36,17 @@
                         <Label text="Номер" />
                         <Label text="Название" GridPane.rowIndex="1" />
                         <Label text="Адрес" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="numberLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <Label layoutX="14.0" layoutY="6.0" text="Место хранения" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                    <HBox layoutX="174.0" layoutY="348.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="75.0">
                        <children>
-                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" text="Добавить" />
-                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" text="Изменить" />
-                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" text="Удалить" />
+                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleNewStorage" text="Добавить" />
+                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleEditStorage" text="Изменить" />
+                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleDeleteStorage" text="Удалить" />
                        </children>
                    </HBox>
                </children>

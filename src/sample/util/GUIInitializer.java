@@ -7,7 +7,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import sample.Main;
 import sample.controllers.MainMenuLayoutController;
-import sample.controllers.invoices.InvoicesRootLayoutController;
 
 public class GUIInitializer {
 
@@ -15,8 +14,6 @@ public class GUIInitializer {
     private BorderPane rootLayout;
     private BorderPane mainMenuLayout;
     private BorderPane invoicesLayout;
-    private MainMenuLayoutController mainMenuLayoutController;
-    private InvoicesRootLayoutController invoicesRootLayoutController;
 
     public GUIInitializer(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -51,7 +48,8 @@ public class GUIInitializer {
 
         rootLayout.setCenter(mainMenuLayout);
 
-        mainMenuLayoutController = loader.getController();
+        MainMenuLayoutController mainMenuLayoutController = loader.getController();
         mainMenuLayoutController.setMainMenuLayout(mainMenuLayout);
+        mainMenuLayoutController.setPrimaryStage(primaryStage);
     }
 }
