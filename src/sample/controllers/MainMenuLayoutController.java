@@ -64,6 +64,7 @@ public class MainMenuLayoutController {
         mainMenuLayout.setCenter(journalsLayout);
         JournalsRootLayoutController journalsRootLayoutController = loader.getController();
         journalsRootLayoutController.setJournalsLayout(journalsLayout);
+        journalsRootLayoutController.setPrimaryStage(primaryStage);
     }
 
     @FXML

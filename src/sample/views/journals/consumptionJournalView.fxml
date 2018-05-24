@@ -13,10 +13,10 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                     <children>
-                        <TableView layoutX="7.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="consumptionJournalTable" layoutX="7.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <columns>
-                                <TableColumn prefWidth="116.0" text="Номер записи" />
-                                <TableColumn prefWidth="118.0" text="Дата" />
+                                <TableColumn fx:id="numberColumn" prefWidth="116.0" text="Номер записи" />
+                                <TableColumn fx:id="dateColumn" prefWidth="118.0" text="Дата" />
                             </columns>
                         </TableView>
                     </children>
@@ -45,19 +45,19 @@
                                 <Label text="Номенклатура" GridPane.rowIndex="2" />
                                 <Label text="Количество" GridPane.rowIndex="4" />
                                 <Label text="Пометки" GridPane.rowIndex="5" />
-                                <Label text="Label" GridPane.columnIndex="1" />
-                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <Label fx:id="numberLabel" text="Label" GridPane.columnIndex="1" />
+                                <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="measureLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="amountLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="notesLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                             </children>
                         </GridPane>
                         <HBox layoutX="174.0" layoutY="348.0" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="75.0">
                             <children>
-                                <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" text="Добавить" />
-                                <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" text="Изменить" />
-                                <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" text="Удалить" />
+                                <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleNewConsumptionJournal" text="Добавить" />
+                                <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleEditConsumptionJournal" text="Изменить" />
+                                <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleDeleteConsumptionJournal" text="Удалить" />
                             </children>
                         </HBox>
                     </children>
