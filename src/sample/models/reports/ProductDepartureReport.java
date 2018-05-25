@@ -1,0 +1,114 @@
+package sample.models.reports;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+public class ProductDepartureReport {
+
+    private StringProperty number;
+    private StringProperty name;
+    private StringProperty measure;
+    private StringProperty price;
+    private StringProperty date;
+    private StringProperty total;
+    private StringProperty notes;
+
+    public ProductDepartureReport() {
+
+    }
+
+    public ProductDepartureReport(String number, String name, String measure,
+                                  String price, String date, String total,String notes) {
+        this.number = new SimpleStringProperty(number);
+        this.name = new SimpleStringProperty(name);
+        this.measure = new SimpleStringProperty(measure);
+        this.price = new SimpleStringProperty(price);
+        this.date = new SimpleStringProperty(date);
+        this.total = new SimpleStringProperty(total);
+        this.notes = new SimpleStringProperty(notes);
+    }
+
+    public String getNumber() {
+        return number.get();
+    }
+
+    public StringProperty numberProperty() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number.set(number);
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getMeasure() {
+        return measure.get();
+    }
+
+    public StringProperty measureProperty() {
+        return measure;
+    }
+
+    public void setMeasure(String measure) {
+        this.measure.set(measure);
+    }
+
+    public String getPrice() {
+        return price.get();
+    }
+
+    public StringProperty priceProperty() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price.set(price);
+    }
+
+    public String getDate() {
+        return date.get();
+    }
+
+    public StringProperty dateProperty() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date.set(date);
+    }
+
+    public String getTotal() {
+        return total.get();
+    }
+
+    public StringProperty totalProperty() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total.set(total);
+    }
+
+    public String getNotes() {
+        return notes.get();
+    }
+
+    public StringProperty notesProperty() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes.set(notes);
+    }
+}
