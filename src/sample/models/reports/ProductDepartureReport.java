@@ -14,7 +14,7 @@ public class ProductDepartureReport {
     private StringProperty notes;
 
     public ProductDepartureReport() {
-
+        this(null, null, null, null, null, null, null);
     }
 
     public ProductDepartureReport(String number, String name, String measure,
