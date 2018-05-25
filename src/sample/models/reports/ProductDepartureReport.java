@@ -8,20 +8,22 @@ public class ProductDepartureReport {
     private StringProperty number;
     private StringProperty name;
     private StringProperty measure;
+    private StringProperty amount;
     private StringProperty price;
     private StringProperty date;
     private StringProperty total;
     private StringProperty notes;
 
     public ProductDepartureReport() {
-        this(null, null, null, null, null, null, null);
+        this(null, null, null, null, null, null, null, null);
     }
 
-    public ProductDepartureReport(String number, String name, String measure,
+    public ProductDepartureReport(String number, String name, String measure, String amount,
                                   String price, String date, String total,String notes) {
         this.number = new SimpleStringProperty(number);
         this.name = new SimpleStringProperty(name);
         this.measure = new SimpleStringProperty(measure);
+        this.amount = new SimpleStringProperty(amount);
         this.price = new SimpleStringProperty(price);
         this.date = new SimpleStringProperty(date);
         this.total = new SimpleStringProperty(total);
@@ -62,6 +64,18 @@ public class ProductDepartureReport {
 
     public void setMeasure(String measure) {
         this.measure.set(measure);
+    }
+
+    public String getAmount() {
+        return amount.get();
+    }
+
+    public StringProperty amountProperty() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount.set(amount);
     }
 
     public String getPrice() {
