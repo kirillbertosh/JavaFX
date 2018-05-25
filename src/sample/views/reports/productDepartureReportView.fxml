@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.reports.ProductDepartureReportController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.reports.ProductDepartureReportViewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="200.0" layoutY="170.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="productDepartureReportTable" layoutX="21.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="118.0" text="Номер" />
-                      <TableColumn prefWidth="116.0" text="Товар" />
+                      <TableColumn fx:id="numberColumn" prefWidth="118.0" text="Номер" />
+                      <TableColumn fx:id="nameColumn" prefWidth="116.0" text="Товар" />
                     </columns>
                   </TableView>
                </children>
@@ -47,22 +47,25 @@
                         <Label text="Дата" GridPane.rowIndex="1" />
                         <Label text="Итого" GridPane.rowIndex="6" />
                         <Label text="Пометки" GridPane.rowIndex="7" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="numberLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="measureLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="amountLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="priceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="totalLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="notesLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                   <Label layoutX="14.0" layoutY="14.0" text="Отчет списания товара" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                    <HBox layoutX="174.0" layoutY="348.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="75.0">
                        <children>
-                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" text="Добавить" />
-                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" text="Изменить" />
-                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" text="Удалить" />
+                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleNewProductDepartureReport" text="Добавить" />
+                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleEditProductDepartureReport" text="Изменить" />
+                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleDeleteProductDepartureReport" text="Удалить" />
                        </children>
                    </HBox>
                </children>

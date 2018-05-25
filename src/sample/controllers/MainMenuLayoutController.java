@@ -53,6 +53,7 @@ public class MainMenuLayoutController {
         mainMenuLayout.setCenter(reportsLayout);
         ReportsRootLayoutController reportsRootLayoutController = loader.getController();
         reportsRootLayoutController.setReportLayout(reportsLayout);
+        reportsRootLayoutController.setPrimaryStage(primaryStage);
     }
 
     @FXML

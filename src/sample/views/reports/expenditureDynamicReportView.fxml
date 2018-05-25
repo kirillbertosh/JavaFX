@@ -13,10 +13,10 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutX="-12.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="expenditureDynamicReportTable" layoutX="-12.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn prefWidth="113.0" text="Номер" />
-                      <TableColumn prefWidth="121.0" text="ТМЦ" />
+                      <TableColumn fx:id="numberColumn" prefWidth="113.0" text="Номер" />
+                      <TableColumn fx:id="nameColumn" prefWidth="121.0" text="ТМЦ" />
                     </columns>
                   </TableView>
                </children>
@@ -45,24 +45,27 @@
                         <Label text="Баланс на начало месяца" GridPane.rowIndex="4" />
                         <Label text="Прибыло в течении месяца" GridPane.rowIndex="5" />
                         <Label text="Отбыло в течении месца" GridPane.rowIndex="6" />
-                        <Label text="Label" GridPane.columnIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="numberLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="measureLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="startBalanceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="arrivedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="departedLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="Отчетный месяц" GridPane.rowIndex="3" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="monthLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Баланс на конец месяца" GridPane.rowIndex="7" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="endBalanceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                   </GridPane>
                   <Label layoutX="14.0" layoutY="6.0" text="Динамика расхода ТМЦ" />
                    <HBox layoutX="174.0" layoutY="348.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="75.0">
                        <children>
-                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false" text="Добавить" />
-                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false" text="Изменить" />
-                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" text="Удалить" />
+                           <Button layoutX="174.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleNewExpenditureDynamicReport" text="Добавить" />
+                           <Button layoutX="241.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleEditExpenditureDynamicReport" text="Изменить" />
+                           <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false"
+                                   onAction="#handleDeleteExpenditureDynamicReport" text="Удалить" />
                        </children>
                    </HBox>
                </children>
